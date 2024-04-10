@@ -11,16 +11,16 @@
 
 <body>
 
-
 <header class="header">
-        <a href="#" class="logo" ></a>
-        <img src="images\Instameme - Logo.png - Logo.png" alt="Instameme" width="126" height="55">
-        <nav class="navbar">
-            <input type="text" name="search" placeholder="Rechercher...">
-            <input type="submit" value="Rechercher">
-            <a href='index.php'>Acceuil</a>
-            <a href='indexconnect.php'>Connectez-vous</a>
-            <a href='#'>Contenu</a>
-        </nav>
+    <a href="#" class='logo'>INSTAMEME</a>
+    
+    <nav class='navbar'>
+        <input type="text" name="search" placeholder="Rechercher...">
+        <input type="submit" value="Rechercher">
+        <a href="#">Accueil</a></li>
+        <a href="composants\login.php">Connexion\Inscription</a></li>
+    </nav>
 
 </header>
+
+</body>

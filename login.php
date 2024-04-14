@@ -1,10 +1,7 @@
 <?php
-
+session_start();
 
 include_once 'db.php';
-
-// require_once '../affichage.php';
-// echo pageHeader('Inta');
 
 if(isset($_POST['envoi'])){
     if (!empty($_POST['Pseudo'])  AND !empty($_POST['Mot_de_passe'])){
@@ -19,7 +16,7 @@ if(isset($_POST['envoi'])){
             $_SESSION['pseudo']=$Pseudo;
             $_SESSION['Mot_de_passe']=$Mot_de_passe;
             $_SESSION['id'] = $user['id'];
-            header('Location: ../index.php');
+            header('Location: index.php');
         }else{
             echo "Votre mot de passe ou pseudo est incorrect";
         }

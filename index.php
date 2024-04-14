@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css\index.css">
 <?php
+session_start();
 require_once 'affichage.php';
 require_once 'db.php';
 
@@ -62,9 +63,10 @@ echo pageHeader("instameme");
     foreach ($contenus as $contenu) {
         echo '<div class="flex flex-col justify-center items-center space-y-2" id="' . $contenu['id'] . '">'
         .'<a href="composants\profil.php?pseudo=' . urlencode($contenu['pseudo']) . '"><button><p>'. $contenu['pseudo'] . '</p></button></a>'
-        . '<img src="' . 'images/' . $contenu['chemin_image'] . '" class="h-40" />'
+        .'<a href="visu.php?id_contenu=' . urlencode($contenu['id']) . '"><img src="' . 'images/' . $contenu['chemin_image'] . '" class="h-40" /></a>'
         . '<button><p>Likes: ' . $contenu['nb_likes'] .'</p></button>'
         . '<p>Commentaire: </p>' ;
+        
         $commentairesStmt = db()->prepare("SELECT * FROM commentaires WHERE id_contenu = ?");
         $commentairesStmt->execute([$contenu['id']]);
         $commentaires = $commentairesStmt->fetchAll();

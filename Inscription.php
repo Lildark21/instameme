@@ -1,5 +1,8 @@
+<title>Inscription</title>
 <?php
 
+require_once 'composants/header.php';
+require_once 'affichage.php';
 require_once 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pseudo = htmlspecialchars($_POST['Pseudo']);
         $Mot_de_passe = md5(htmlspecialchars($_POST['Mot_de_passe']));
 
-        $sqlQuery = 'SELECT pseudo FROM utilisateurs WHERE pseudo = :pseudo';
+        $sqlQuery = ("SELECT pseudo FROM utilisateurs WHERE pseudo = :pseudo");
         $stm = db()->prepare($sqlQuery);
         $stm->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
         $stm->execute();
@@ -17,10 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (!$recipes) { 
 
-            $sql = 'INSERT INTO utilisateurs(pseudo, mot_de_passe, date_inscription) VALUES (:pseudo, :mot_de_passe, :date_inscription)';
+            $sql = ('INSERT INTO utilisateurs(pseudo, mot_de_passe, date_inscription) VALUES (:pseudo, :mot_de_passe, :date_inscription)');
             $stm = db()->prepare($sql);
             $stm->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
-            $stm->bindParam(':mot_de_passe', $Mot_de_passe, PDO::PARAM_STR); // Correction de la variable
+            $stm->bindParam(':mot_de_passe', $Mot_de_passe, PDO::PARAM_STR); 
             $date_inscription = date('Y-m-d H:i:s');
             $stm->bindParam(':date_inscription', $date_inscription, PDO::PARAM_STR);
             $stm->execute();
@@ -34,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    
 </head>
 <body>
     <div class="inscription">

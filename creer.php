@@ -1,14 +1,15 @@
-<link rel="stylesheet" type="text/css" href="css\creer.css">
 <?php
+session_start();
 //verifie si un utilisateur est connecter et le laisse publier sinon renvois a la page de connection ou d'inscrition
 // sauvegarde la publication dans la bdd
-session_start();
+include_once 'affichage.php';
+include_once 'composants/header.php';
 include_once 'db.php';
 
-if(isset($_POST['envoi']))
 
 ?>
-
+<link rel="stylesheet" type="text/css" href="css\creer.css">
+<title>Créer</title>
 <div class="card">
     <form method="POST" action="">
         <input type="file" placeholder="Champ de  Fichier" required>

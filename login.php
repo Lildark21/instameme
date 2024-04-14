@@ -1,6 +1,8 @@
 <?php
-session_start();
 
+session_start();
+include_once 'affichage.php';
+include_once 'composants/header.php';
 include_once 'db.php';
 
 if(isset($_POST['envoi'])){

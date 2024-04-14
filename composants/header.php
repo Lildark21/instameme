@@ -15,7 +15,7 @@
         <input type="text" name="search" placeholder="Rechercher...">
         <input type="submit" value="Rechercher">
         <a href="#">Accueil</a></li>
-        <a href="composants\login.php">Connexion\Inscription</a></li>
+        <a href="login.php">Connexion\Inscription</a></li>
 
     </nav>
 

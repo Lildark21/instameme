@@ -1,24 +1,56 @@
-/* Style du bouton Like */
+*
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid div {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
 button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #e30000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+.pagination {
+    margin-top: 20px;
 }
 
-.grid  div {
-    background-color: #f0f0f0;
-    padding: 1rem;
-    border-radius: 8px; 
+.pagination span {
+    margin-right: 10px;
+    font-weight: bold;
 }
 
-.
+.pagination ul {
+    list-style: none;
+    padding: 0;
+}
 
+.pagination ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.pagination ul li a {
+    text-decoration: none;
+    color: #3498db;
+    padding: 5px 10px;
+    border: 1px solid #3498db;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination ul li a:hover {
+    background-color: #3498db;
+    color: #fff;
+}

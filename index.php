@@ -1,12 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css\index.css">
 <?php
-session_start();
-
-if(isset($_SESSION['user_id']));
-
-?>
-
-<?php
 require_once 'affichage.php';
 require_once 'db.php';
 

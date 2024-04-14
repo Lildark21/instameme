@@ -1,6 +1,6 @@
 <?php
 include_once 'db.php';
-//affiche le contenue de l'utilisateur
+//affiche les contenues lie a l'utilisateur
 $stmt = db()->prepare("SELECT * FROM utilisateurs WHERE pseudo LIKE ?");
 $stmt->execute(["%" . $_GET["recherche"] . "%"]);
 $contenus = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -1,4 +1,6 @@
 <?php
+
+//rajoute un nouveau commentaire dans la bdd
 require_once 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
